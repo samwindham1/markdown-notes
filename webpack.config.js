@@ -16,6 +16,21 @@ module.exports = {
         exclude: /node_modules/,
         use: ['babel-loader'],
         // sideEffects: false, // tree-shaking
+      },
+      {
+        test: /\.css$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader',
+            options: {
+              modules: true,
+              localIdentName: '[name]__[local]--[hash:base64:5]'
+            }
+          }
+        ]
       }
     ]
   },
