@@ -14,9 +14,11 @@ class Editor extends Component {
     });
 
     return (
-      <div id={'editor__' + data.id} className={style.editor} contentEditable="true" suppressContentEditableWarning="true">
-        {lines}
-        <Line />
+      <div className="col-8 height-100">
+        <div id={'editor__' + data.id} className={style.editor} contentEditable="true" suppressContentEditableWarning="true">
+          {lines}
+          <Line />
+        </div>
       </div>
     )
   }

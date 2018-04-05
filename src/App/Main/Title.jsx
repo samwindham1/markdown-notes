@@ -3,16 +3,17 @@ import React, { Component } from 'react';
 class Title extends Component {
   render() {
     const style = {
-      fontSize: 36,
-      marginLeft: 72,
-      height: '100%',
+      width: '100%',
+      fontSize: 28,
+      height: 72,
       lineHeight: '72px',
-      textAlign: 'center'
     }
 
     return (
-      <div id="title" style={style}>
-        {this.props.text}
+      <div className="col-8">
+        <div id="title" style={style}>
+          {this.props.text}
+        </div>
       </div>
     )
   }

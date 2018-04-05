@@ -1,14 +1,13 @@
 .main {
-  position: absolute;
-  top: 72px;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  overflow-y: auto
+  flex-grow: 1;
+  float: left;
+  height: 100%;
 }
 .container {
-  height: calc(100% - 24px);
-  width: 85%;
+  display: block;
+  height: calc(100% - 72px);
+  width: calc(100% - 24px);
   margin: 0 auto;
-  padding: 12px;
+  margin-left: 24px;
+  overflow-y: auto;
 }

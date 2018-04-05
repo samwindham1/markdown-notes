@@ -3,7 +3,7 @@ import style from './Line.css';
 
 class Line extends Component {
   render() {
-    const line = this.props.text ? this.props.text: <span>&nbsp;</span>;
+    const line = this.props.text ? this.props.text: <br/>;
 
     return (
       <div className={style.line}>

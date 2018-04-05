@@ -1,6 +1,12 @@
+.responsive {
+  width: 75%;
+  height: 100%;
+  margin: 0 auto;
+}
+
+
 .editor {
-  display: inline-block;
-  width: 100%;
+  display: block;
   height: 100%;
 }
 
