@@ -6,14 +6,11 @@
       "lines": [
         "# Header 1",
         "",
-        "- List Item 1",
-        "- List Item 2",
-        "- List Item 3",
+        "- List Item 1\n- List Item 2\n- List Item 3",
         "",
         "## Header 2",
         "---",
-        "Standard text.",
-        "Text with *italics* and **BOLD** text."
+        "Standard text.\nText with *italics* and **BOLD** text."
       ]
     },
     {
