@@ -1,0 +1,30 @@
+{
+  "notes": [
+    {
+      "id": "note-1",
+      "name": "Note 1",
+      "lines": [
+        "# Header 1",
+        "",
+        "- List Item 1",
+        "- List Item 2",
+        "- List Item 3",
+        "",
+        "## Header 2",
+        "---",
+        "Standard text.",
+        "Text with *italics* and **BOLD** text."
+      ]
+    },
+    {
+      "id": "note-2",
+      "name": "Note 2",
+      "lines": [
+        "[Inline Link](http://www.google.com)",
+        "",
+        "Inline `code` highglighting"
+      ]
+
+    }
+  ]
+}
