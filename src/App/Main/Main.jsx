@@ -1,24 +1,13 @@
 import React, { Component } from 'react';
-import Editor from './Editor';
+import style from './Main.css';
+import Editor from './Editor/Editor';
 
 class Main extends Component {
   render() {
-    const mainStyle = {
-      position: 'absolute',
-      top: 72,
-      bottom: 0,
-      left: 0,
-      right: 0,
-      overflowY: 'auto'
-    }
-    const containerStyle = {
-      width: '85%',
-      margin: '0 auto',
-    }
 
     return (
-      <div id="main" style={mainStyle}>
-        <div className="container" style={containerStyle}>
+      <div id="main" className={style.main}>
+        <div className="container" className={style.container}>
           <Editor />
         </div>
       </div>

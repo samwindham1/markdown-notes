@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Line from './Line';
 import style from './Editor.css';
-import ApiService  from '../Services/api.service';
+import ApiService  from 'Services/api.service';
 
 class Editor extends Component {
   render() {

@@ -15,7 +15,7 @@ module.exports = {
         include: path.resolve(__dirname, 'src'),
         exclude: /node_modules/,
         use: ['babel-loader'],
-        // sideEffects: false, // tree-shaking
+        sideEffects: false, // tree-shaking
       },
       {
         test: /\.css$/,
@@ -26,6 +26,7 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              sourceMap: true,
               modules: true,
               localIdentName: '[name]__[local]--[hash:base64:5]'
             }
@@ -36,7 +37,11 @@ module.exports = {
   },
   resolve:{
     extensions: ['*', '.js', '.jsx'],
-    symlinks: false
+    symlinks: false,
+    alias: {
+      Services: path.resolve(__dirname, 'src/Services'),
+      Components: path.resolve(__dirname, 'src/App/Components')
+    }
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
@@ -45,9 +50,9 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    // new webpack.DefinePlugin({
-    //   'process.env.NODE_ENV': '"production"'
-    // }),
+    new webpack.DefinePlugin({
+      'process.env.NODE_ENV': '"production"'
+    }),
     new UglifyJsPlugin({
       uglifyOptions: {
         mangle: true,
