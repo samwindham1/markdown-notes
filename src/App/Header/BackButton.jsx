@@ -10,7 +10,7 @@ class BackButton extends Component {
       marginTop: 7,
       fontSize: 36
     }
-    const icon = <i class="fa fa-chevron-left"></i>;
+    const icon = <i className="fa fa-chevron-left"></i>;
 
     function handleClick() {
       console.log('Back Clicked!');

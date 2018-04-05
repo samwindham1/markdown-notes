@@ -1,15 +1,12 @@
 import React, { Component } from 'react';
+import style from './Line.css';
 
 class Line extends Component {
   render() {
-    const style = {
-      marginTop: 6,
-      marginBottom: 6
-    }
-    const line = this.props.text.length ? this.props.text: <span>&nbsp;</span>;
+    const line = this.props.text ? this.props.text: <span>&nbsp;</span>;
 
     return (
-      <div style={style}>
+      <div className={style.line}>
         {line}
       </div>
     )

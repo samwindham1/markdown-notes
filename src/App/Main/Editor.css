@@ -1,0 +1,8 @@
+.editor {
+  width: 100%;
+  padding-top: 12;
+}
+
+.editor:focus {
+  outline: none;
+}

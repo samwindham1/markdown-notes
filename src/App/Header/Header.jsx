@@ -11,6 +11,7 @@ class Header extends Component {
       position: 'absolute',
       top: '0',
       left: '0',
+      zIndex: 100
     }
 
     return (
