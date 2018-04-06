@@ -5,6 +5,11 @@
   margin: 0;
 }
 
+.line:focus {
+  background-color: #fafafa;
+  outline: none;
+}
+
 .line * {
   margin: 0;
 }

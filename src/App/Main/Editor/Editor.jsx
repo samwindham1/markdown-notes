@@ -4,6 +4,15 @@ import style from './Editor.css';
 import ApiService  from 'Services/api.service';
 
 class Editor extends Component {
+  constructor() {
+    super();
+    this.focusEditor = this.focusEditor.bind(this);
+  }
+
+  focusEditor(event) {
+    console.log("editor focus");
+  }
+
   render() {
     const id = 'note-1';
     const data = ApiService.get(id);
@@ -15,7 +24,8 @@ class Editor extends Component {
 
     return (
       <div className="col-8 height-100">
-        <div id={'editor__' + data.id} className={style.editor} contentEditable="true" suppressContentEditableWarning="true">
+        <div id={'editor__' + data.id} className={style.editor}
+             contentEditable="true" suppressContentEditableWarning="true">
           {lines}
           <Line />
         </div>
