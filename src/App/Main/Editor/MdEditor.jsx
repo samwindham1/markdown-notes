@@ -31,8 +31,10 @@ class MdEditor extends Component {
 
   render() {
     return (
-      <div className={`col-8 height-100 ${style.editor}`} >
-        <Editor editorState={this.state.editorState} onChange={this.onChange} />
+      <div className='col-8' >
+        <div className={style.editor} >
+          <Editor editorState={this.state.editorState} onChange={this.onChange} />
+        </div>
       </div>
     )
   }

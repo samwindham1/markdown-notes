@@ -1,14 +1,6 @@
-.responsive {
-  width: 75%;
-  height: 100%;
-  margin: 0 auto;
-}
-
-
 .editor {
   display: block;
-  height: calc(100% - 2px);
-  border: solid 1px #666;
+  height: 100%;
 }
 
 .editor:focus {
