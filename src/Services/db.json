@@ -3,25 +3,12 @@
     {
       "id": "note-1",
       "name": "Note 1",
-      "lines": [
-        "# Header 1",
-        "",
-        "- List Item 1\n- List Item 2\n- List Item 3",
-        "",
-        "## Header 2",
-        "---",
-        "Standard text.\nText with *italics* and **BOLD** text."
-      ]
+      "text": "# Header 1\n\n- List Item 1\n- List Item 2\n- List Item 3\n\n## Header 2\n---\nStandard text.\nText with *italics* and **BOLD** text.\n"
     },
     {
       "id": "note-2",
       "name": "Note 2",
-      "lines": [
-        "[Inline Link](http://www.google.com)",
-        "",
-        "Inline `code` highglighting"
-      ]
-
+      "text": "[Inline Link](http://www.google.com)\n\nInline `code` highglighting"
     }
   ]
 }

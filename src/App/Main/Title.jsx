@@ -10,8 +10,8 @@ class Title extends Component {
     }
 
     return (
-      <div className="col-8">
-        <div id="title" style={style}>
+      <div id="title" className="col-8">
+        <div style={style}>
           {this.props.text}
         </div>
       </div>
