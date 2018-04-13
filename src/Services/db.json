@@ -3,7 +3,7 @@
     {
       "id": "note-1",
       "name": "Note 1",
-      "text": "# Header 1\n\n- List Item 1\n- List Item 2\n- List Item 3\n\n## Header 2\n---\nStandard text.\nText with *italics* and **BOLD** text.\n"
+      "text": "# Header 1\n\n- List Item 1\n- List Item 2\n- List Item 3\n\n## Header 2\n\nStandard text. Text with *italics* and **BOLD** text."
     },
     {
       "id": "note-2",

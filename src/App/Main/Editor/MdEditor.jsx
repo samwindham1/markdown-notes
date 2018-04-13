@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Editor, EditorState, ContentState, convertFromHTML } from 'draft-js';
+import { Editor, EditorState, ContentState, convertFromHTML, RichUtils } from 'draft-js';
 import marked from 'marked';
 
 import ApiService from 'Services/api.service';
@@ -11,15 +11,35 @@ class MdEditor extends Component {
     super(props);
 
     this.data = ApiService.get(props.id);
-    console.log(props.id, this.data);
+    this.markup = marked(this.data.text, {'gfm': true});
+    console.log(props.id, this.data, this.markup);
 
     this.state = { editorState: this.parseContent() };
-    this.onChange = (editorState) => this.setState({editorState})
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(editorState) {
+    const selectionState = editorState.getSelection();
+    const startKey = selectionState.getStartKey();
+
+    const currentContent = editorState.getCurrentContent();
+
+    const blockIndex = currentContent.getBlockMap()
+      .keySeq().findIndex(k => k == startKey);
+
+    const markupText = this.data.text.split('\n').filter(line => {
+      return line !== '';
+    })[blockIndex];
+
+    editorState = RichUtils.toggleBlockType(editorState, 'unstyled');
+    console.log(RichUtils.getCurrentBlockType(editorState));
+    console.log(markupText);
+    this.setState({ editorState });
+
   }
 
   parseContent() {
-    const markup = marked(this.data.text);
-    const blocksFromHTML = convertFromHTML(markup);
+    const blocksFromHTML = convertFromHTML(this.markup);
     const state = ContentState.createFromBlockArray(
       blocksFromHTML.contentBlocks,
       blocksFromHTML.entityMap
