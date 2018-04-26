@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Editor, EditorState, ContentState, convertFromHTML, RichUtils } from 'draft-js';
+import { Editor, EditorState, ContentState, convertFromHTML, RichUtils, Modifier } from 'draft-js';
 import marked from 'marked';
 
 import ApiService from 'Services/api.service';
@@ -32,10 +32,13 @@ class MdEditor extends Component {
     })[blockIndex];
 
     editorState = RichUtils.toggleBlockType(editorState, 'unstyled');
-    console.log(RichUtils.getCurrentBlockType(editorState));
-    console.log(markupText);
+    // console.log(markupText);
+    // const entityKey = currentContent.getBlockForKey(startKey).getText();
+    const contentState = Modifier.replaceText(currentContent, selectionState, markupText);
+    // const currentEntity = currentContent.getEntity(entityKey);
+    // const contentState = currentContent.replaceEntityData(entityKey, {text: markupText})
+    editorState = EditorState.push(editorState, contentState);
     this.setState({ editorState });
-
   }
 
   parseContent() {
